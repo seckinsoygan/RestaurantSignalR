@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\SignalR.DAL\SignalR.DAL.csproj" />
+  </ItemGroup>
+
 </Project>
