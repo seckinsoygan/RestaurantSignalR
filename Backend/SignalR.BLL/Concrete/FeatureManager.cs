@@ -13,14 +13,14 @@ namespace SignalR.BLL.Concrete
             this.FeatureDal = FeatureDal;
         }
 
-        public async Task AddAsync(Feature entity)
+        public void Add(Feature entity)
         {
-            await FeatureDal.AddAsync(entity);
+            FeatureDal.Add(entity);
         }
 
-        public async Task DeleteAsync(Feature entity)
+        public void Delete(Feature entity)
         {
-            await FeatureDal.DeleteAsync(entity);
+            FeatureDal.Delete(entity);
         }
 
         public async Task<List<Feature>> GetAllAsync(Expression<Func<Feature, bool>> filter = null)
@@ -33,9 +33,9 @@ namespace SignalR.BLL.Concrete
             return await FeatureDal.GetAsync(filter);
         }
 
-        public async Task UpdateAsync(Feature entity)
+        public void Update(Feature entity)
         {
-            await FeatureDal.UpdateAsync(entity);
+            FeatureDal.Update(entity);
         }
     }
 }

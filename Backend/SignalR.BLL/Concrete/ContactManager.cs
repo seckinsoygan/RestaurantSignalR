@@ -13,14 +13,14 @@ namespace SignalR.BLL.Concrete
             this.ContactDal = ContactDal;
         }
 
-        public async Task AddAsync(Contact entity)
+        public void Add(Contact entity)
         {
-            await ContactDal.AddAsync(entity);
+            ContactDal.Add(entity);
         }
 
-        public async Task DeleteAsync(Contact entity)
+        public void Delete(Contact entity)
         {
-            await ContactDal.DeleteAsync(entity);
+            ContactDal.Delete(entity);
         }
 
         public async Task<List<Contact>> GetAllAsync(Expression<Func<Contact, bool>> filter = null)
@@ -33,9 +33,9 @@ namespace SignalR.BLL.Concrete
             return await ContactDal.GetAsync(filter);
         }
 
-        public async Task UpdateAsync(Contact entity)
+        public void Update(Contact entity)
         {
-            await ContactDal.UpdateAsync(entity);
+            ContactDal.Update(entity);
         }
     }
 }

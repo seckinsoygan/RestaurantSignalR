@@ -13,14 +13,14 @@ namespace SignalR.BLL.Concrete
             this.SocialMediaDal = SocialMediaDal;
         }
 
-        public async Task AddAsync(SocialMedia entity)
+        public void Add(SocialMedia entity)
         {
-            await SocialMediaDal.AddAsync(entity);
+            SocialMediaDal.Add(entity);
         }
 
-        public async Task DeleteAsync(SocialMedia entity)
+        public void Delete(SocialMedia entity)
         {
-            await SocialMediaDal.DeleteAsync(entity);
+            SocialMediaDal.Delete(entity);
         }
 
         public async Task<List<SocialMedia>> GetAllAsync(Expression<Func<SocialMedia, bool>> filter = null)
@@ -33,9 +33,9 @@ namespace SignalR.BLL.Concrete
             return await SocialMediaDal.GetAsync(filter);
         }
 
-        public async Task UpdateAsync(SocialMedia entity)
+        public void Update(SocialMedia entity)
         {
-            await SocialMediaDal.UpdateAsync(entity);
+            SocialMediaDal.Update(entity);
         }
     }
 }

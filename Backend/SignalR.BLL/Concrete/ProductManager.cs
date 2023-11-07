@@ -13,14 +13,14 @@ namespace SignalR.BLL.Concrete
             this.ProductDal = ProductDal;
         }
 
-        public async Task AddAsync(Product entity)
+        public void Add(Product entity)
         {
-            await ProductDal.AddAsync(entity);
+            ProductDal.Add(entity);
         }
 
-        public async Task DeleteAsync(Product entity)
+        public void Delete(Product entity)
         {
-            await ProductDal.DeleteAsync(entity);
+            ProductDal.Delete(entity);
         }
 
         public async Task<List<Product>> GetAllAsync(Expression<Func<Product, bool>> filter = null)
@@ -33,9 +33,9 @@ namespace SignalR.BLL.Concrete
             return await ProductDal.GetAsync(filter);
         }
 
-        public async Task UpdateAsync(Product entity)
+        public void Update(Product entity)
         {
-            await ProductDal.UpdateAsync(entity);
+            ProductDal.Update(entity);
         }
     }
 }

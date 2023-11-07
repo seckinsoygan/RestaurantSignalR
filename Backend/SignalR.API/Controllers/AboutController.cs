@@ -31,24 +31,24 @@ namespace SignalR.API.Controllers
             return Ok(value);
         }
         [HttpPost("CreateAbout")]
-        public async Task<IActionResult> CreateAbout(CreateAboutDto dto)
+        public IActionResult CreateAbout(CreateAboutDto dto)
         {
             var value = _mapper.Map<About>(dto);
-            await _aboutservice.AddAsync(value);
+            _aboutservice.Add(value);
             return Ok($"{value.Title} başarılı bir şekilde eklendi.");
         }
         [HttpPut("UpdateAbout")]
-        public async Task<IActionResult> UpdateAbout(UpdateAboutDto dto)
+        public IActionResult UpdateAbout(UpdateAboutDto dto)
         {
             var value = _mapper.Map<About>(dto);
-            await _aboutservice.UpdateAsync(value);
+            _aboutservice.Update(value);
             return Ok("Güncelleme Başarılı.");
         }
         [HttpDelete("DeleteAbout")]
         public async Task<IActionResult> DeleteAbout(int id)
         {
             var value = await _aboutservice.GetAsync(c => c.Id == id);
-            await _aboutservice.DeleteAsync(value);
+            _aboutservice.Delete(value);
             return Ok("Silme Başarılı.");
         }
     }
