@@ -2,7 +2,7 @@
 using Microsoft.Extensions.Configuration;
 using SignalR.EntityLayer.Concrete;
 
-namespace SignalR.DAL.Concrete
+namespace SignalR.DAL.Shared
 {
     public class AppDbContext : DbContext
     {
