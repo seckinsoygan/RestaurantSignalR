@@ -11,6 +11,7 @@ namespace SignalR.API.Mapping
             CreateMap<Product, CreateProductDto>().ReverseMap();
             CreateMap<Product, ResultProductDto>().ReverseMap();
             CreateMap<Product, UpdateProductDto>().ReverseMap();
+            CreateMap<Product, ResultProductWithCategoryDto>().ReverseMap();
         }
     }
 }

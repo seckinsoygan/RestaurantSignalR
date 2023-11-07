@@ -33,6 +33,11 @@ namespace SignalR.BLL.Concrete
             return await ProductDal.GetAsync(filter);
         }
 
+        public async Task<List<Product>> GetProductsWithCategoryAsync(Expression<Func<Product, bool>> filter = null)
+        {
+            return await ProductDal.GetProductsWithCategoryAsync();
+        }
+
         public void Update(Product entity)
         {
             ProductDal.Update(entity);

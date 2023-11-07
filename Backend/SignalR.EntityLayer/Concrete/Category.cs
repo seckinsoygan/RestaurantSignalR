@@ -6,5 +6,6 @@ namespace SignalR.EntityLayer.Concrete
     {
         public string CategoryName { get; set; }
         public bool Status { get; set; }
+        public ICollection<Product> Products { get; set; }
     }
 }
