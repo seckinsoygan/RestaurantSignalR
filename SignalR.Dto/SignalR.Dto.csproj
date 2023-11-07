@@ -10,13 +10,4 @@
     <ProjectReference Include="..\Backend\SignalR.EntityLayer\SignalR.EntityLayer.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Contact\" />
-    <Folder Include="Discount\" />
-    <Folder Include="Feature\" />
-    <Folder Include="Testimonial\" />
-    <Folder Include="SocialMedia\" />
-    <Folder Include="Product\" />
-  </ItemGroup>
-
 </Project>
