@@ -15,13 +15,12 @@ namespace SignalR.BLL.Concrete
 
         public async Task AddAsync(Discount entity)
         {
-            DiscountDal.Add(entity);
+            await DiscountDal.AddAsync(entity);
         }
 
-        public async Task DeleteAsync(int id)
+        public async Task DeleteAsync(Discount entity)
         {
-            var value = DiscountDal.GetById(id);
-            DiscountDal.Delete(value);
+            await DiscountDal.DeleteAsync(entity);
         }
 
         public async Task<List<Discount>> GetAllAsync(Expression<Func<Discount, bool>> filter = null)
@@ -36,7 +35,7 @@ namespace SignalR.BLL.Concrete
 
         public async Task UpdateAsync(Discount entity)
         {
-            DiscountDal.Update(entity);
+            await DiscountDal.UpdateAsync(entity);
         }
     }
 }

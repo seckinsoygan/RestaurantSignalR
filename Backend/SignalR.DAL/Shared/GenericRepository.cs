@@ -16,16 +16,16 @@ namespace SignalR.DAL.Shared
             _unitOfWork = unitOfWork;
         }
 
-        public void Add(T entity)
+        public async Task AddAsync(T entity)
         {
-            _context.Add(entity);
-            _unitOfWork.SaveChanges();
+            await _context.AddAsync(entity);
+            await _unitOfWork.SaveChangesAsync();
         }
 
-        public void Delete(T entity)
+        public async Task DeleteAsync(T entity)
         {
             _context.Remove(entity);
-            _unitOfWork.SaveChanges();
+            await _unitOfWork.SaveChangesAsync();
         }
 
         public async Task<List<T>> GetAllAsync(Expression<Func<bool, T>> filter = null)
@@ -35,7 +35,7 @@ namespace SignalR.DAL.Shared
 
         public async Task<T> GetAsync(Expression<Func<T, bool>> filter)
         {
-            return await _context.Set<T>().FindAsync(filter);
+            return await _context.Set<T>().SingleOrDefaultAsync(filter);
         }
 
         public T GetById(int id)
@@ -43,10 +43,10 @@ namespace SignalR.DAL.Shared
             return _context.Set<T>().Find(id);
         }
 
-        public void Update(T entity)
+        public async Task UpdateAsync(T entity)
         {
             _context.Update(entity);
-            _unitOfWork.SaveChanges();
+            await _unitOfWork.SaveChangesAsync();
         }
     }
 }

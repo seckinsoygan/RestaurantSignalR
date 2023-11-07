@@ -9,6 +9,6 @@ namespace SignalR.BLL.Shared
         Task<T> GetAsync(Expression<Func<T, bool>> filter);
         Task AddAsync(T entity);
         Task UpdateAsync(T entity);
-        Task DeleteAsync(int id);
+        Task DeleteAsync(T entity);
     }
 }

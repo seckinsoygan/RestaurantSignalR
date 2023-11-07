@@ -15,13 +15,12 @@ namespace SignalR.BLL.Concrete
 
         public async Task AddAsync(Testimonial entity)
         {
-            TestimonialDal.Add(entity);
+            await TestimonialDal.AddAsync(entity);
         }
 
-        public async Task DeleteAsync(int id)
+        public async Task DeleteAsync(Testimonial entity)
         {
-            var value = TestimonialDal.GetById(id);
-            TestimonialDal.Delete(value);
+            await TestimonialDal.DeleteAsync(entity);
         }
 
         public async Task<List<Testimonial>> GetAllAsync(Expression<Func<Testimonial, bool>> filter = null)
@@ -36,7 +35,7 @@ namespace SignalR.BLL.Concrete
 
         public async Task UpdateAsync(Testimonial entity)
         {
-            TestimonialDal.Update(entity);
+            await TestimonialDal.UpdateAsync(entity);
         }
     }
 }

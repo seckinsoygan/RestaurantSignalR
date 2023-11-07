@@ -15,13 +15,12 @@ namespace SignalR.BLL.Concrete
 
         public async Task AddAsync(Booking entity)
         {
-            BookingDal.Add(entity);
+            await BookingDal.AddAsync(entity);
         }
 
-        public async Task DeleteAsync(int id)
+        public async Task DeleteAsync(Booking entity)
         {
-            var value = BookingDal.GetById(id);
-            BookingDal.Delete(value);
+            await BookingDal.AddAsync(entity);
         }
 
         public async Task<List<Booking>> GetAllAsync(Expression<Func<Booking, bool>> filter = null)
@@ -36,7 +35,7 @@ namespace SignalR.BLL.Concrete
 
         public async Task UpdateAsync(Booking entity)
         {
-            BookingDal.Update(entity);
+            await BookingDal.AddAsync(entity);
         }
     }
 }
