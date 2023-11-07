@@ -38,6 +38,11 @@ namespace SignalR.DAL.Shared
             return await _context.Set<T>().FindAsync(filter);
         }
 
+        public T GetById(int id)
+        {
+            return _context.Set<T>().Find(id);
+        }
+
         public void Update(T entity)
         {
             _context.Update(entity);
