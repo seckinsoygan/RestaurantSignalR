@@ -15,7 +15,7 @@ namespace SignalR.DAL.Shared
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(_configuration.GetConnectionString("DefaultConnection"));
+            optionsBuilder.UseSqlServer(_configuration.GetConnectionString("DefaultConnection")).UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
         }
         public DbSet<About> Abouts { get; set; }
         public DbSet<Booking> Bookings { get; set; }
