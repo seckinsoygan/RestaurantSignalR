@@ -1,0 +1,49 @@
+﻿@model SignalR.Dto.Product.UpdateProductDto
+@{
+    ViewData["Title"] = "UpdateProduct";
+    Layout = "~/Views/AdminLayout/Index.cshtml";
+}
+
+<div class="content">
+    <div class="container-fluid">
+        <h4 class="page-title">Yeni Ürün Girişi</h4>
+        <div class="row">
+            <div class="col-md-12">
+                <form method="post">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="card-title">Base Form Control</div>
+                        </div>
+                        <input type="hidden" asp-for="Id" />
+                        <div class="card-body">
+                            <div class="form-group">
+                                <label for="categoryName">Adı</label>
+                                <input type="text" class="form-control" asp-for="ProductName" id="inputid1">
+                            </div>
+                            <div class="form-group">
+                                <label for="categoryName">Açıklaması</label>
+                                <input type="text" class="form-control" asp-for="Description" id="inputid2">
+                            </div>
+                            <div class="form-group">
+                                <label for="categoryName">Fiyat</label>
+                                <input type="number" class="form-control" asp-for="Price" id="inputid3">
+                            </div>
+                            <div class="form-group">
+                                <label for="categoryName">Resim</label>
+                                <input type="text" class="form-control" asp-for="ImageUrl" id="inputid4">
+                            </div>
+                            <div class="form-group">
+                                <label for="categoryName">Kategori</label>
+                                @Html.DropDownListFor(x=>x.CategoryId,(List<SelectListItem>)ViewBag.values,new{@class = "form-control"})
+                            </div>
+                        </div>
+                        <div class="card-action">
+                            <button class="btn btn-success">Ekle</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
